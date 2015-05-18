@@ -1,0 +1,14 @@
+4. Global Linear Models: Instructions Help Center
+
+Note: This assignment is completely optional, but we highly recommend it for students interested in the later section of the class. 
+
+Assignment instructions:
+
+You are free to use any programming language you wish. The sample code is in Python, but you will not need to call it from your code.
+You can use external libraries, but do not use NLP libraries such as NLTK.
+Be careful about your output. Make sure you remove any debug print statements before submitting.
+Assignment Description 
+
+Assignment Files 
+
+The expected development F-Scores are 0.29 for Part 1, 0.44 for Part 2, and 0.51 for Part 3 using prefix features.

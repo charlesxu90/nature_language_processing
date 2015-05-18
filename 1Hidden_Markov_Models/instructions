@@ -1,0 +1,5 @@
+Assignment instructions:
+
+You are free to use any programming language you wish. The sample code is in Python, but you will not need to call it from your code.
+You can use external libraries, but do not use NLP libraries such as NLTK.
+Be careful about your output. Make sure you remove any debug print statements before submitting.

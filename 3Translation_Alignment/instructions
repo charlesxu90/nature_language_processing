@@ -1,0 +1,14 @@
+3. Translation Alignment: Instructions Help Center
+
+Assignment instructions:
+
+You are free to use any programming language you wish. The sample code is in Python, but you will not need to call it from your code.
+You can use external libraries, but do not use NLP libraries such as NLTK.
+Be careful about your output. Make sure you remove any debug print statements before submitting.
+Assignment Description 
+
+Note: The last part is optional but we encourage interested students to give it a try. 
+
+Assignment Files 
+
+The expected development F-Scores are 0.420, 0.449, and a basic intersection alignment should give 0.485 for the last part.
