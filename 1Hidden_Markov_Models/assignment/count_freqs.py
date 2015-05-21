@@ -85,6 +85,7 @@ class Hmm(object):
         self.emission_counts = defaultdict(int)
         self.ngram_counts = [defaultdict(int) for i in xrange(self.n)]
         self.all_states = set()
+        self.emission_probs = defaultdict(float)
 
     def train(self, corpus_file):
         """
@@ -135,6 +136,7 @@ class Hmm(object):
 
         for line in corpusfile:
             parts = line.strip().split(" ")
+            #print(parts[0])
             count = float(parts[0])
             if parts[1] == "WORDTAG":
                 ne_tag = parts[2]
@@ -145,8 +147,12 @@ class Hmm(object):
                 n = int(parts[1].replace("-GRAM",""))
                 ngram = tuple(parts[2:])
                 self.ngram_counts[n-1][ngram] = count
-                
 
+    def emission_prob(self, output):
+        
+        for word, ne_tag in self.emission_counts:
+            self.emission_probs[(word, ne_tag)] = float(self.emission_counts[(word, ne_tag)]) / self.ngram_counts[0][tuple([ne_tag])]
+            output.write("%f %s %s\n" % (self.emission_probs[(word, ne_tag)], ne_tag, word))
 
 def usage():
     print """
@@ -168,7 +174,19 @@ if __name__ == "__main__":
     
     # Initialize a trigram counter
     counter = Hmm(3)
+    
     # Collect counts
-    counter.train(input)
+    #counter.train(input)
+    
     # Write the counts
-    counter.write_counts(sys.stdout)
+    #counter.write_counts(sys.stdout)
+    
+    # Read the counts
+    try:
+        corpusfile = open('./gene.counts', 'r')
+    except IOError:
+        sys.stderr.write("ERROR: Cannot read inputfile ./gene.counts.\n" )
+        sys.exit(1)
+ 
+    counter.read_counts(corpusfile)
+    counter.emission_prob(sys.stdout)
