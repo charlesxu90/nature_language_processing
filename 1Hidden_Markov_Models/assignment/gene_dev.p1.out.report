@@ -1,0 +1,4 @@
+Found 2669 GENEs. Expected 642 GENEs; Correct: 424.
+
+	 precision 	recall 		F1-Score
+GENE:	 0.158861	0.660436	0.256116
