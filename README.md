@@ -1,5 +1,5 @@
 # nature_language_processing
-Codes for "Nature Language Processing" course by Michael Collins
+Codes for "Nature Language Processing" course (Michael Collins)
 
 Enjoy the code.
 
